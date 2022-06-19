@@ -1,0 +1,37 @@
+{% load static %}
+
+<section class="probootstrap-section-bg overlay" style="background-image: url({% static '/img/hero_bg_4.jpg' %};"  data-stellar-background-ratio="0.5" data-section="informes">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center probootstrap-animate">
+            <div class="probootstrap-heading">
+              <h2 class="primary-heading">News</h2>
+              <h3 class="secondary-heading">Informes</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+    <section class="probootstrap-section">
+      <div class="container">
+        <section class="flexslider">
+              <ul class="slides">
+                {% for e in informes %}
+                <li style="background-image: url({{ e.imagem.thumb.url }}" class="overlay" data-stellar-background-ratio="0.5">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-8 col-md-offset-2">
+                        <div class="probootstrap-slider-text text-center probootstrap-animate probootstrap-heading">
+                          <h1 class="primary-heading">{{ e.tituloprimario }}</h1>
+                          <h3 class="secondary-heading">{{ e.titulosecundario }}</h3>
+                          <p class="sub-heading">{{ e.descricao }}<a href="https://uicookies.com">uicookies.com</a></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+               {% endfor %}
+              </ul>
+        </section>
+      </div>
+    </section>

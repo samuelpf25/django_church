@@ -1,0 +1,23 @@
+{% load static %}
+
+<section class="probootstrap-section probootstrap-bg-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 text-center probootstrap-animate">
+            {% for q in quemsomos %}
+              <div class="probootstrap-heading dark">
+                <h1 class="primary-heading">Descubra</h1>
+                <h3 class="secondary-heading">Quem nós Somos</h3>
+                <span class="seperator">* * *</span>
+              </div>
+              <p>{{ q.descricao }}</p>
+              <p><a href="#" class="probootstrap-custom-link">Sobre nós</a></p>
+            </div>
+            <div class="col-md-6 col-md-push-1 probootstrap-animate">
+              <p><img src="{{ q.imagem.thumb.url }}" alt="{{ q.titulo }}" class="img-responsive"></p>
+            </div>
+          {% endfor %}
+        </div>
+        <!-- END row -->
+      </div>
+</section>

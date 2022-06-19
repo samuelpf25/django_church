@@ -1,0 +1,35 @@
+{% load static %}
+
+<section class="probootstrap-section-bg overlay" style="background-image: url({% static '/img/hero_bg_4.jpg' %};"  data-stellar-background-ratio="0.5" data-section="palavras">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center probootstrap-animate">
+            <div class="probootstrap-heading">
+              <h2 class="primary-heading">Upcoming</h2>
+              <h3 class="secondary-heading">Palavras</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="probootstrap-section">
+      <div class="container">
+        <div class="row">
+          {% for e in palavras %}
+
+          <div class="col-md-4 col-sm-4 probootstrap-animate">
+            <div class="probootstrap-block-image">
+              <figure><img src="{{ e.imagem.thumb.url }}" alt="{{ e.titulo }}"></figure>
+              <div class="text">
+                <span class="date">{{ e.data }}</span>
+                <h3><a href="#">{{ e.titulo }}</a></h3>
+                <p>{{ e.chamada }}</p>
+                <p class=""><a href="#" class="probootstrap-custom-link link-sm">Saiba Mais</a></p>
+              </div>
+            </div>
+          </div>
+
+          {% endfor%}
+        </div>
+      </div>
+    </section>
